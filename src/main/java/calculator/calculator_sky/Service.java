@@ -1,6 +1,5 @@
 package calculator.calculator_sky;
 
-
 @org.springframework.stereotype.Service
 public class Service {
 
