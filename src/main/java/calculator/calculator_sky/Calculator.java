@@ -1,3 +1,4 @@
+
 package calculator.calculator_sky;
 
 
@@ -23,8 +24,8 @@ public class Calculator {
         if (num1 == null || num2 == null) {
             return "один (оба) из параметров не определён(ы)";
         }
-            return num1 + " + " + num2 + " = " + service.plus(num1, num2);
-        }
+        return num1 + " + " + num2 + " = " + service.plus(num1, num2);
+    }
 
     @GetMapping(path = "/calculator/minus")
     public String minus(@RequestParam (value = "num1", required = false) Integer num1,
@@ -46,7 +47,7 @@ public class Calculator {
     public String divide(@RequestParam (value = "num1", required = false) Integer num1,
                          @RequestParam (value = "num2", required = false) Integer num2) {
         if (num2 ==0 ){
-            return "На 0 делить нельзя";
+            throw new  DivisionByZeroException();
         }
         else if (num1 == null || num2 == null) {
             return "один (оба) из параметров не определён(ы)";
