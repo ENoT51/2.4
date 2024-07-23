@@ -1,26 +1,13 @@
 package calculator.calculator_sky;
 
-@org.springframework.stereotype.Service
-public class Service {
+public interface Service {
+    String calculator();
 
-    public String calculator() {
-        return "Добро пожаловать в калькулятор";
-    }
+    int plus(int num1, int num2);
 
-    public int plus(int num1, int num2) {
-        int sum = num1 + num2;
-        return sum;
-    }
-    public int minus(int num1, int num2) {
-        int difference = num1 - num2;
-        return difference;
-    }
-    public int multiply(int num1, int num2) {
-        int multiply = num1 * num2;
-        return multiply;
-    }
-    public int divide(int num1, int num2) {
-        int divide = num1 / num2;
-        return divide;
-    }
+    int minus(int num1, int num2);
+
+    int multiply(int num1, int num2);
+
+    int divide(int num1, int num2);
 }
